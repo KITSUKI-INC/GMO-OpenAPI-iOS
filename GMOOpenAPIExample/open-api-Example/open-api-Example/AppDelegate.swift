@@ -6,14 +6,17 @@
 //
 
 import UIKit
+import GMOOpenAPI
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        let configuration = Configuration(host: "dev.aozora-openapi.com")
+        GMOOpenAPI.shared.setConfiguration(configuration)
+        GMOOpenAPI.shared.configuration?.setSessionId(sessionId: "a8e17cfd-8c30-44a7-813f-0aa0b9b46613")
+
         return true
     }
 
